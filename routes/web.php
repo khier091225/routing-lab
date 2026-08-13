@@ -22,6 +22,11 @@ Route::get('/about', function() {
 // Route::view('/about', 'about'); for shorter syntax
 
 /////////////////////// Required Route Parameter /////////////////////////
-Route::get('/student/{id}', function($id) {
+Route::get('/student/{id}', function(string $id) {
     return "Student ID: {$id}";
 })->name('students.show');
+
+//////////////////////// Optional Route Parameter /////////////////////////
+Route::get('/Welcome/{name?}', function(?string $name = "Student") {
+    return "Welcome, {$name}";
+});
