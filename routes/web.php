@@ -84,3 +84,13 @@ Route::prefix('admin')->name('admin.')->group(function() {
         return 'Admin student list';
     })->name('students.index');
 });
+
+
+/////////////////////// Recognize basic middleware ////////////////////////
+Route::middleware('throttle:5,1')->get('/limited', function() {
+    return 'Your reached a rate-limited route.';
+});
+
+Route::middleware('auth')->get('/dashboard', function() {
+    return 'Private dashboard';
+});
