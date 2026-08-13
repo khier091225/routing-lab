@@ -39,3 +39,10 @@ Route::get('/courses', function() {
 Route::get('/course-url', function() {
     return route('courses.index');
 });
+
+////////////////////////// Redirect one route to another /////////////////////////
+Route::redirect('/old-about', '/about');
+
+Route::get('go-to-courses', function() {
+    return to_route('courses.index');
+});
