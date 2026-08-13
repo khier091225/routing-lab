@@ -108,3 +108,10 @@ Route::get('/greet/{name}', function(string $name) {
 Route::get('/course/{level?}', function(string $level = "beginner") {
     return "Course level: {$level}";
 });
+
+
+/////////////////////// Create a contact view /////////////////////////////
+Route::get('/contact', function() {
+    return view('contact');
+});
+
