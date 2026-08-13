@@ -46,3 +46,24 @@ Route::redirect('/old-about', '/about');
 Route::get('go-to-courses', function() {
     return to_route('courses.index');
 });
+
+////////////////////////// Use GET, POST, PUT, PATCH, and DELETE /////////////////////////
+Route::get('/tasks', function() {
+    return view('tasks');
+});
+
+Route::post('/tasks', function() {
+    return "POST: task created.";
+});
+
+Route::put('/tasks/{id}', function(string $id) {
+    return "PUT: task {$id} replaced.";
+});
+
+Route::patch('/tasks/{id}', function(string $id) {
+    return "PATCH: task {$id} updated.";
+});
+
+Route::delete('/tasks/{id}', function(string $id) {
+    return "DELETE: task {$id} removed.";
+});
