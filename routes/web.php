@@ -133,7 +133,7 @@ Route::post('/feedback', function() {
 });
 
 Route::delete('/feedback/{id}', function(string $id) {
-    return "Feedback 1 deleted!";
+    return "Feedback {$id} deleted!";
 });
 
 Route::get('/controller/courses', [CourseController::class, 'index']);
