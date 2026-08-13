@@ -103,3 +103,8 @@ Route::middleware('auth')->get('/dashboard', function() {
 Route::get('/greet/{name}', function(string $name) {
     return "Hello, {$name}";
 });
+
+/////////////////////// Use an optional course level ///////////////////////////
+Route::get('/course/{level?}', function(string $level = "beginner") {
+    return "Course level: {$level}";
+});
