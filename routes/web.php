@@ -113,5 +113,12 @@ Route::get('/course/{level?}', function(string $level = "beginner") {
 /////////////////////// Create a contact view /////////////////////////////
 Route::get('/contact', function() {
     return view('contact');
+})->name('contact.show');
+
+
+////////////////////// Name and redirect a route /////////////////////////
+Route::get('/support', function() {
+    return to_route('contact.show');
 });
+
 
