@@ -122,3 +122,11 @@ Route::get('/support', function() {
 });
 
 
+///////////////////// Handle a POST form safely ////////////////////////
+Route::get('/feedback', function() {
+    return view('feedback');
+});
+
+Route::post('/feedback', function() {
+    return 'Feedback received';
+});
