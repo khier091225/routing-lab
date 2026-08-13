@@ -10,9 +10,14 @@
 
     <form method="POST" action="/feedback">
         @csrf
-        <label for="message">Your Feedback</label>
-        <textarea id="message" name="message"></textarea>
         <button type="submit">Send Feedback</button>
     </form>
+
+    <form method="POST" action="/feedback/1">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete Feedback</button>
+    </form>
+
 </body>
 </html>

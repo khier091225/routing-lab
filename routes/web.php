@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -130,3 +131,9 @@ Route::get('/feedback', function() {
 Route::post('/feedback', function() {
     return 'Feedback received';
 });
+
+Route::delete('/feedback/{id}', function(string $id) {
+    return "Feedback 1 deleted!";
+});
+
+Route::get('/controller/courses', [CourseController::class, 'index']);
