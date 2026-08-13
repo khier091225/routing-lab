@@ -146,13 +146,3 @@ Route::prefix('instructor')->name('instructor.')->middleware('throttle:10,1')->g
         return 'Instructor Courses';
     })->name('courses.index');
 });
-
-
-Route::prefix('admin')->name('admin.')->group(function() {
-    Route::get('/', function() {
-        return 'Admin Dashboard';
-    })->name('dashboard');
-    Route::get('/students', function() {
-        return 'Admin student list';
-    })->name('students.index');
-});
