@@ -30,3 +30,12 @@ Route::get('/student/{id}', function(string $id) {
 Route::get('/Welcome/{name?}', function(?string $name = "Student") {
     return "Welcome, {$name}";
 });
+
+///////////////////////// Name a route and generate its URL /////////////////////////
+Route::get('/courses', function() {
+    return 'Course List';
+})->name('courses.index');
+
+Route::get('/course-url', function() {
+    return route('courses.index');
+});
