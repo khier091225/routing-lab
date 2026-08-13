@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\StudentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -67,3 +68,8 @@ Route::patch('/tasks/{id}', function(string $id) {
 Route::delete('/tasks/{id}', function(string $id) {
     return "DELETE: task {$id} removed.";
 });
+
+
+//////////////////////// Create a controller and route to its methods //////////////////////
+Route::get('/controller/students', [StudentController::class, 'index']);
+Route::get('/controller/students/{id}', [StudentController::class, 'show']);
