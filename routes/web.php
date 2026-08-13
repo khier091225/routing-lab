@@ -137,3 +137,22 @@ Route::delete('/feedback/{id}', function(string $id) {
 });
 
 Route::get('/controller/courses', [CourseController::class, 'index']);
+
+Route::prefix('instructor')->name('instructor.')->middleware('throttle:10,1')->group(function() {
+    Route::get('/dashboard', function() {
+        return 'Instructor Dashboard';
+    })->name('dashboard');
+    Route::get('/courses', function() {
+        return 'Instructor Courses';
+    })->name('courses.index');
+});
+
+
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('/', function() {
+        return 'Admin Dashboard';
+    })->name('dashboard');
+    Route::get('/students', function() {
+        return 'Admin student list';
+    })->name('students.index');
+});
