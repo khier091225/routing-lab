@@ -73,3 +73,14 @@ Route::delete('/tasks/{id}', function(string $id) {
 //////////////////////// Create a controller and route to its methods //////////////////////
 Route::get('/controller/students', [StudentController::class, 'index']);
 Route::get('/controller/students/{id}', [StudentController::class, 'show']);
+
+
+//////////////////////// Group routes with a prefix //////////////////////////
+Route::prefix('admin')->name('admin.')->group(function() {
+    Route::get('/', function() {
+        return 'Admin Dashboard';
+    })->name('dashboard');
+    Route::get('/students', function() {
+        return 'Admin student list';
+    })->name('students.index');
+});
