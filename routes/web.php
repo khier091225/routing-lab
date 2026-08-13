@@ -9,3 +9,7 @@ Route::get('/', function () {
 Route::get('/hello', function() {
     return "Hello, Laravel Routing";
 });
+
+Route::get('/school', function() {
+    return "Welcome to our laravel class.";
+});
