@@ -94,3 +94,12 @@ Route::middleware('throttle:5,1')->get('/limited', function() {
 Route::middleware('auth')->get('/dashboard', function() {
     return 'Private dashboard';
 });
+
+
+
+/////////////////////// HANDS ON ACTIVITY /////////////////////////
+
+/////////////////////// Build a personal greeting route /////////////////////////
+Route::get('/greet/{name}', function(string $name) {
+    return "Hello, {$name}";
+});
